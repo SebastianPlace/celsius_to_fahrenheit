@@ -13,7 +13,7 @@ fn main() {
             Err(_) => continue, // Enter new input on error
         }
 
-        // We use trim() since all input has a newline char at the end, which means it cannot be converted to a number.
+        // We use trim() since our input will have a newline char at the end, which means it cannot be converted to a number.
         let celsius: f64 = match celsius.trim().parse::<f64>() {
             Ok(num) => num,
             Err(_) => continue, // Enter new input on error
@@ -25,6 +25,7 @@ fn main() {
     }
 }
 
+// We cast our ints to floats because rust doesn't allow arithmetic with multiple types.
 fn celsius_to_fahrenheit(celsius: f64) -> f64 {
     (celsius * (9 / 5) as f64) + 32 as f64
 }
